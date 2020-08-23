@@ -1,0 +1,123 @@
+.header {
+    background-color: $color-white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: .5rem 4rem; // GENERAL PADDING FOR ALL SECTIONS
+    box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.16);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    
+    &__logo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: $color-black;
+        
+        &-text {
+        &--main {
+            font-size: 3rem;
+            font-weight: 500;
+        }
+
+
+        &--sub {
+            font-size: 1.5rem;
+            font-weight: 400;
+        }
+
+
+        &--separator {
+            color: $color-light-blue;
+        }
+        }
+
+        &::before {
+            content: "";
+            display: inline-block;
+            background-color: $color-light-blue;
+            height: 5rem;
+            width: 5rem;
+            clip-path: polygon( 0% 50%, 100% 0%, 100% 100%);
+            margin-right: 1rem;
+        }
+
+    }
+
+    &__search {
+        position: relative;
+        border-radius: 20px;
+        padding: .1rem 2rem;
+        display: flex;
+        align-items: center;
+        border: 1px solid rgba(0, 0, 0, 0.108);
+        box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.16);
+        display: flex;
+        justify-content: space-between;
+
+        &--input {
+            height: 3.5rem;
+            display: inline-block;
+            border: none;
+            color: $color-black;
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            width: 15rem;
+
+
+            &:focus,
+            &:active {
+                outline: none;
+                width: 20rem;
+
+                + .header__search--btn {
+                    font-size: 2rem;
+                }
+
+                + .header__search--btn::before {
+                    border: 1px solid $color-light-blue;
+                    opacity: 0.8;
+                }
+            }
+
+
+            &::-webkit-search-cancel-button {
+                /* Remove default */
+                -webkit-appearance: none;
+              }
+
+            
+        } 
+
+        &--btn {
+            font-size: 1.8rem;
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+
+            &::before {
+                content: '';
+                display: inline-block;
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                left: 0;
+                top: 0;
+                border-radius: 20px;
+                border: 1px solid transparent;
+                z-index: -1;
+                transition: all .2s ease;
+
+
+
+            } 
+
+            &:visited,
+            &:link {
+                color: $color-light-blue;
+            }
+
+        }
+
+    }
+    
+}

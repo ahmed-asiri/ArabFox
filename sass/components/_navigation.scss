@@ -1,0 +1,67 @@
+.navigation {
+    width: 12%;
+    height: 90vh;
+    overflow: hidden;
+    position: sticky;
+    top: 100px;
+    
+    &:hover {
+        overflow-y: scroll;
+    }
+
+    &__item {
+        width: 180px;
+        margin: 2rem 0;
+        font-size: 1.5rem;
+        
+        &:first-of-type {
+            margin-top: 0rem;
+        }
+
+        &--special {
+            width: 180px;
+            border-top: 1px solid rgba(85, 85, 85, 0.226);
+            border-bottom: 1px solid rgba(85, 85, 85, 0.226);
+            padding: 1.3rem 0;
+            margin: 2rem 0;
+            font-size: 1.5rem;
+        }
+    }
+
+
+    &__text {
+        display: flex;
+        justify-items: center;
+        align-items: center;
+        padding: 1rem;
+        border-radius: 3px;
+        transition: background-color .3s ease;
+
+        &:visited,
+        &:link {
+            color: $color-black;
+            text-decoration: none;
+        }
+
+        & i {
+            width: 3.4rem;
+            font-size: 1.6rem;
+        }
+
+        &:hover {
+            background-color: #efefef;
+            border-radius: 3px;
+        }
+
+        
+        &.active {
+            background-color: $color-light-blue;
+            color: $color-btn-white;
+        }
+        
+
+    }
+
+}
+
+
